@@ -1,0 +1,172 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/_mixins";
+
+//Tab chuyển đổi
+.elearning-tabs-enroll {
+  padding: $sp-6;
+  font-family: $font-main;
+  display: flex;
+  justify-content: center;
+  // min-height: 100vh;
+
+  .ant-tabs {
+    width: $p75;
+    max-width: $p85;
+    margin: 0 auto;
+    background: $white;
+    border-radius: $rad-l;
+    box-shadow: $sh-m;
+    padding: $sp-7 $sp-7 $sp-1 $sp-7;
+
+    // NAV BỌC NGOÀI
+    .ant-tabs-nav {
+      // Đường kẻ chân
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 2px solid $blue-light !important;
+        opacity: 0.5; // Làm rõ đường gạch chân xanh nhạt
+        z-index: 1;
+      }
+    }
+
+    //TỪNG TAB ITEM
+    .ant-tabs-tab {
+      min-width: 160px; // Cố định để gạch chân ink-bar không bị lệch
+      margin: 0 !important;
+      padding: $sp-3 $sp-5;
+      display: flex;
+      justify-content: center;
+      background: transparent;
+      border: none !important;
+      transition: all 0.3s ease;
+
+      .ant-tabs-tab-btn {
+        font-size: $text-m;
+        font-weight: $fwM;
+        color: $blue-carbon;
+        z-index: 2;
+      }
+
+      &:hover {
+        .ant-tabs-tab-btn {
+          color: $blue-dark;
+        }
+      }
+
+      //  Active
+      &.ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          font-size: $h5;
+          position: relative;
+          background: radial-gradient(
+            circle,
+            rgba($blue-medium, 0.2) 0%,
+            rgba($blue-light, 0.2) $p75,
+            transparent $p85
+          );
+          padding: $sp-2;
+          color: $blue-dark;
+        }
+      }
+    }
+
+    //GẠCH CHÂN XANH ĐẬM)
+    .ant-tabs-ink-bar {
+      height: 4px;
+      background: $blue-midnight !important;
+      z-index: 3;
+      border-radius: 0;
+    }
+  }
+
+  //  RESPONSIVE
+  @media (max-width: $bp-md) {
+    padding: $sp-3;
+    .ant-tabs {
+      width: $p100;
+      padding: $sp-4;
+
+      .ant-tabs-tab {
+        min-width: 100px;
+      }
+    }
+  }
+}
+
+//List
+
+.whole-list-enroll-user {
+  // Container bao ngoài
+  margin-top: $sp-4;
+
+  .wrapper-list-enroll-user {
+    // Tùy chỉnh thanh cuộn mỏng (đã làm ở các bước trước)
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: $sp-2;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $blue-light;
+      border-radius: $rad-pill;
+    }
+
+    // ===== CSS CHO TỪNG DÒNG (LIST ITEM) =====
+    .ant-list-item {
+      padding: $sp-3 $sp-4 !important; // Tạo khoảng trống cho dòng
+      border-bottom: 1px solid rgba($blue-light, 0.3); // Đường kẻ mỏng giữa các dòng
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      div {
+        p {
+          font-size: $h5;
+          font-weight: $fwS;
+        }
+      }
+      .btn-enroll-list {
+        width: $p20;
+        @include btn-base;
+
+        color: white !important;
+        background-color: $warm-3;
+        &:hover {
+          color: $warm-3 !important;
+          background-color: $warm-2;
+        }
+      }
+
+      // NỘI DUNG CHÍNH: HIỆU ỨNG HOVER
+      &:hover {
+        background-color: rgba($blue-light, 0.4);
+        border-radius: $rad-m;
+        color: $blue-midnight;
+        box-shadow: 0 2px 8px rgba($blue-midnight, 0.05);
+      }
+    }
+
+    // Loại bỏ đường kẻ ở dòng cuối cùng
+    .ant-list-item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  // Tùy chỉnh Pagination của Antd cho khớp màu
+  .ant-pagination {
+    margin-top: $sp-5 !important;
+
+    .ant-pagination-item-active {
+      border-color: $blue-medium;
+      background: $blue-medium;
+      a {
+        color: $white;
+      }
+    }
+  }
+}

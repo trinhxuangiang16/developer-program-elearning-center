@@ -1,0 +1,138 @@
+@import "../../styles/abstracts/variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//NavBar
+.navbar {
+  background-color: $blue-midnight;
+  height: $sp-10 + 30;
+  .nav-wrap {
+    gap: $sp-10;
+    .nav-logo {
+      text-decoration: none !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        margin: 0 0 0 $sp-5;
+        font-size: $h1;
+        font-family: $font-main;
+        font-weight: $fwXL;
+        @include logo;
+      }
+    }
+    .nav-left {
+      div {
+        gap: $sp-7;
+        .link-route {
+          color: $white;
+          font-weight: $fwL;
+          font-size: $text-l;
+          text-decoration: none;
+          &:hover {
+            text-shadow: $tsh;
+          }
+        }
+        .active-navbar {
+          color: $blue-medium;
+          font-weight: $fwL;
+        }
+      }
+    }
+
+    .btn-look {
+      border-radius: $rad-m;
+      @include btn-look;
+      @include btn-tone($blue-light, $blue-dark);
+    }
+
+    .nav-right {
+      .btn-auth {
+        font-weight: $fwM;
+        @include btn-tone($blue-light, $blue-dark);
+        &:hover {
+          color: $blue-light !important;
+          background-color: $blue-dark !important;
+          text-shadow: $tsh;
+        }
+      }
+    }
+  }
+}
+
+//AdminLayout
+.content-admin {
+  position: relative;
+  display: flex;
+  //   width: $pxl;
+  .side-bar {
+    width: $p15;
+  }
+  .children-admin {
+    width: $p85;
+  }
+}
+
+//Side Bar
+.side-bar {
+  background-color: $blue-carbon;
+  padding: $sp-6 $sp-4 $sp-4 $sp-4;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-3;
+    .link-route {
+      position: relative;
+      color: $white;
+      font-weight: $fwL;
+      font-size: $text-l;
+      text-decoration: none;
+
+      &:hover {
+        text-shadow: $tsh;
+      }
+    }
+    .active-sidebar {
+      color: $blue-medium;
+      font-weight: $fwL;
+    }
+  }
+}
+//Footer
+.admin-footer {
+  background-color: $blue-midnight !important;
+  height: $sp-10 + 30;
+  div {
+    div {
+      div {
+        margin: 0 auto;
+
+        div {
+          .nav-logo {
+            text-decoration: none !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2 {
+              margin: 0 0 0 $sp-5;
+              font-size: $h1;
+              font-family: $font-main;
+              font-weight: $fwXL;
+              @include logo;
+            }
+          }
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

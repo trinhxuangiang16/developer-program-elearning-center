@@ -1,0 +1,118 @@
+.elearning-tabs {
+  padding: 24px;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.elearning-tabs .ant-tabs {
+  width: 75%;
+  max-width: 85%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.266);
+  padding: 32px 32px 4px 32px;
+}
+.elearning-tabs .ant-tabs .ant-tabs-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid #bde8f5 !important;
+  opacity: 0.5;
+  z-index: 1;
+}
+.elearning-tabs .ant-tabs .ant-tabs-tab {
+  min-width: 160px;
+  margin: 0 !important;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+.elearning-tabs .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  z-index: 2;
+}
+.elearning-tabs .ant-tabs .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: #1c4d8d;
+}
+.elearning-tabs .ant-tabs .ant-tabs-tab.ant-tabs-tab-active {
+  background: linear-gradient(135deg, #4988c4, #bde8f5);
+  border-radius: 999px 999px 0 0 !important;
+}
+.elearning-tabs .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+.elearning-tabs .ant-tabs .ant-tabs-ink-bar {
+  height: 4px;
+  background: #0f2854 !important;
+  z-index: 3;
+  border-radius: 0;
+}
+@media (max-width: 768px) {
+  .elearning-tabs {
+    padding: 12px;
+  }
+  .elearning-tabs .ant-tabs {
+    width: 100%;
+    padding: 16px;
+  }
+  .elearning-tabs .ant-tabs .ant-tabs-tab {
+    min-width: 100px;
+  }
+}
+
+.whole-list-enroll-user {
+  margin-top: 16px;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user::-webkit-scrollbar {
+  width: 4px;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user::-webkit-scrollbar-thumb {
+  background: #bde8f5;
+  border-radius: 999px;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user .ant-list-item {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid rgba(189, 232, 245, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user .ant-list-item span.ant-typography-strong {
+  margin-right: 12px;
+  color: #1c4d8d;
+  min-width: 25px;
+  display: inline-block;
+}
+.whole-list-enroll-user .wrapper-list-enroll-user .ant-list-item:hover {
+  background-color: rgba(189, 232, 245, 0.4);
+  border-radius: 8px;
+  color: #0f2854;
+  box-shadow: 0 2px 8px rgba(15, 40, 84, 0.05);
+}
+.whole-list-enroll-user .wrapper-list-enroll-user .ant-list-item:last-child {
+  border-bottom: none;
+}
+.whole-list-enroll-user .ant-pagination {
+  margin-top: 20px !important;
+}
+.whole-list-enroll-user .ant-pagination .ant-pagination-item-active {
+  border-color: #4988c4;
+  background: #4988c4;
+}
+.whole-list-enroll-user .ant-pagination .ant-pagination-item-active a {
+  color: #ffffff;
+}/*# sourceMappingURL=UserEnroll.css.map */

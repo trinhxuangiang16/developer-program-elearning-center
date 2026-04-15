@@ -1,0 +1,88 @@
+// TONE XANH CHỦ ĐẠO
+$blue-midnight: #0f2854;
+$blue-dark: #1c4d8d;
+$blue-medium: #4988c4;
+$blue-light: #bde8f5;
+
+// Xám nền nhẹ
+$gray-light: #f4f4f4;
+
+// Màu nóng
+$warm-1: #face68; // vàng
+$warm-2: #faac68; // cam
+$warm-3: #fa6868; // đỏ cam
+
+// Màu chữ
+$blue-carbon: #0f172a; // chữ đậm
+$ink-2: #475569; // chữ phụ
+$ink-3: #94a3b8; // ghi chú
+
+$white: #ffffff;
+
+// Background
+$bg-main: #f4f4f4;
+$bg-card: #ffffff;
+
+// FONT FAMILY
+$font-main: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  sans-serif;
+
+// HEADING SCALE (h1–h6: 12–40px)
+$h1: 40px;
+$h2: 32px;
+$h3: 28px;
+$h4: 22px;
+$h5: 16px;
+$h6: 12px;
+
+// TEXT SCALE (10–25px)
+$text-s: 10px;
+$text-m: 14px;
+$text-l: 16px;
+$text-xl: 25px;
+
+// SPACING
+$sp-1: 4px;
+$sp-2: 8px;
+$sp-3: 12px;
+$sp-4: 16px;
+$sp-5: 20px;
+$sp-6: 24px;
+$sp-7: 32px;
+$sp-8: 38px;
+$sp-9: 45px;
+$sp-10: 70px;
+
+// RADIUS
+$rad-s: 4px;
+$rad-m: 8px;
+$rad-l: 12px;
+$rad-xl: 15px;
+$rad-pill: 999px;
+
+// SHADOW
+$sh-s: 0 1px 2px rgba(255, 255, 255, 0.333);
+$sh-m: 2px 4px 10px rgba(255, 255, 255, 0.266);
+
+$tsh: 0 0 10px rgba(255, 255, 255, 0.173), 0 0 10px rgba(255, 255, 255, 0.195);
+
+// BREAKPOINTS (mới)
+// Mobile nhỏ → từ đây trở lên là đỡ “vỡ” giao diện
+$bp-xs: 480px; // mobile nhỏ
+$bp-sm: 576px; // mobile lớn
+$bp-md: 768px; // tablet
+$bp-lg: 1024px; // desktop
+$bp-xl: 1280px; //desktop lớn
+$bp-xxl: 1536px; //desktop siêu rộng
+
+$p15: 15%;
+$p20: 20%;
+$p50: 50%;
+$p75: 75%;
+$p85: 85%;
+$p100: 100%;
+
+$fwS: 500;
+$fwM: 600;
+$fwL: 700;
+$fwXL: 800;

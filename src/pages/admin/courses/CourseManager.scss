@@ -1,0 +1,83 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/_mixins";
+
+//CoursesForm
+.form-course {
+  padding: $sp-9;
+  @include h3;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-3;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  // Input, TextArea
+  .ant-input,
+  .ant-input-textarea,
+  .ant-input-textarea textarea {
+    width: 100%;
+    @include input-base;
+  }
+
+  // Select
+  .ant-select {
+    width: 100%;
+  }
+
+  // DatePicker
+  .ant-picker {
+    width: 100%;
+  }
+
+  // Upload
+  .ant-upload {
+    width: 100%;
+    button {
+      @include btn-base;
+      @include btn-tone($blue-light, $blue-dark);
+    }
+  }
+
+  // nút submit
+  button {
+    @include btn-base;
+    @include btn-tone($blue-light, $blue-dark);
+  }
+}
+
+//Courses Manager
+.course-table {
+  padding: $sp-9;
+  @include h3;
+  .form-search {
+    display: flex;
+    gap: $sp-3;
+    margin-bottom: $sp-3;
+    .ant-input {
+      @include input-base;
+    }
+    button {
+      @include btn-base;
+      @include btn-tone($blue-light, $blue-dark);
+    }
+  }
+  .search-not-found {
+    color: $warm-3;
+    font-size: $text-m;
+    font-style: italic;
+  }
+}
+
+.loading-text {
+  text-align: center;
+  margin: $sp-10 auto;
+}

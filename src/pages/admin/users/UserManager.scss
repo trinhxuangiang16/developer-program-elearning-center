@@ -1,0 +1,60 @@
+.form-user {
+  padding: $sp-9;
+  @include h3;
+
+  .form-search {
+    display: flex;
+    gap: $sp-3;
+    margin-bottom: $sp-3;
+    .ant-input {
+      @include input-base;
+    }
+    button {
+      @include btn-base;
+      @include btn-tone($blue-light, $blue-dark);
+    }
+  }
+  .search-not-found {
+    color: $warm-3;
+    font-size: $text-m;
+    font-style: italic;
+  }
+}
+.form-create-user,
+.form-update-user {
+  padding: $sp-9;
+  @include h3;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-3;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  // Input, TextArea
+  .ant-input,
+  .ant-input-textarea,
+  .ant-input-textarea textarea {
+    width: 100%;
+    @include input-base;
+  }
+
+  // Select
+  .ant-select {
+    width: 100%;
+  }
+
+  // nút submit
+  button {
+    @include btn-base;
+    @include btn-tone($blue-light, $blue-dark);
+  }
+}

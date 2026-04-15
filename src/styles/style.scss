@@ -1,0 +1,19 @@
+// style.scss
+
+// abstracts (variables, mixins)
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+//layouts component
+// @import "../layouts/HomeLayout/HomeLayout.scss";
+@import "../layouts/AdminLayout/AdminLayout.scss";
+
+//pages
+
+@import "../pages/course-detail/CourseDetail.scss";
+
+//7) pages riêng lẻ
+@import "../pages/admin/courses/CourseManager.scss";
+@import "../pages/admin/users/UserManager.scss";
+
+@import "../pages/admin/enroll/userEnroll/UserEnroll.scss";

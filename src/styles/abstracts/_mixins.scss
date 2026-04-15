@@ -1,0 +1,204 @@
+@import "./variables";
+
+//RESPONSIVE
+//Mobile-first: dùng @include up(xs|sm|md|lg|xl|xxl) { ... }
+@mixin up($size) {
+  @if $size == xs {
+    @media (min-width: $bp-xs) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media (min-width: $bp-xxl) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$size} không tồn tại. Dùng xs|sm|md|lg|xl|xxl.";
+  }
+}
+
+//FLEX TOOL
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin child-form-antd {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-3;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  // Input, TextArea
+  .ant-input,
+  .ant-input-textarea,
+  .ant-input-textarea textarea {
+    width: 100%;
+    @include input-base;
+  }
+
+  // Select
+  .ant-select {
+    width: 100%;
+  }
+
+  // DatePicker
+  .ant-picker {
+    width: 100%;
+  }
+
+  // Upload
+  .ant-upload {
+    width: 100%;
+    button {
+      @include btn-base;
+      @include btn-tone($blue-light, $blue-dark);
+    }
+  }
+
+  // nút submit
+  button {
+    @include btn-base;
+    @include btn-tone($blue-light, $blue-dark);
+  }
+}
+
+//BUTTON BASE
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $sp-1;
+  padding: $sp-2 $sp-4;
+  border-radius: $rad-m;
+  border: 1px solid transparent;
+  font-family: $font-main;
+  font-size: $text-m;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin btn-look {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $sp-1;
+  padding: $sp-2 $sp-4;
+  border: 1px solid transparent;
+  font-family: $font-main;
+  font-size: $text-m;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Tone màu cho button
+@mixin btn-tone($bg, $color) {
+  background-color: $bg !important;
+  color: $color;
+  box-shadow: $sh-s;
+
+  &:hover {
+    background-color: $color !important;
+    color: $bg;
+  }
+}
+
+@mixin h3 {
+  h3 {
+    font-size: $h3;
+    font-weight: $fwM;
+  }
+}
+
+//Logo
+@mixin logo {
+  position: relative;
+  background-image: url(/logo.jpg);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+
+  @keyframes animate {
+    to {
+      background-position-x: -1000px;
+    }
+  }
+}
+
+//INPUT BASE
+@mixin input-base {
+  width: 100%;
+  padding: $sp-2 $sp-3;
+  border-radius: $rad-m;
+  border: 1px solid $ink-3;
+  background-color: $white;
+  font-family: $font-main;
+  font-size: $text-m;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-light;
+    box-shadow: 0 0 0 1px rgba(0, 183, 181, 0.4);
+    background-color: #f9ffff;
+  }
+
+  &::placeholder {
+    color: $ink-3;
+  }
+}
