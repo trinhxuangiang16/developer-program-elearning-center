@@ -1,18 +1,63 @@
-# React + Vite
+# E-Learning Center (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dự án frontend cho trung tâm e-learning: xem danh mục khoá học, chi tiết khoá học, đăng ký/đăng nhập và khu vực **Admin** quản trị user/course/enroll.  
+Backend là hệ thống nội bộ của trung tâm cung cấp và bảo mật
 
-Currently, two official plugins are available:
+## Demo Admin (for testing)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Username: `trinhxuangiang`
+- Password: `trinhxuangiang`
 
-## React Compiler
+> Lưu ý: quyền Admin được kiểm tra theo `maLoaiNguoiDung === "GV"`.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tech Stack
 
-Note: This will impact Vite dev & build performances.
+- **React 19** + **Vite**
+- **Routing**: React Router DOM v7 (public/admin routes)
+- **State Management**: Redux Toolkit + React Redux
+- **Server State**: TanStack React Query + Axios
+- **UI**: Ant Design (antd) + Bootstrap/React-Bootstrap
+- **Forms & Validation**: React Hook Form + Zod (+ resolvers)
+- **Styling**: TailwindCSS + SCSS/Sass
+- **Tooling**: ESLint, deploy config cho Vercel
 
-## Expanding the ESLint configuration
+## Features / Modules
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### User (Public)
+
+- Home / danh mục khoá học / danh sách khoá theo danh mục
+- Course detail
+- Auth: Login / Register
+- Profile (yêu cầu đăng nhập)
+
+### Admin (My responsibility)
+
+- **User Management**: list / create / update
+- **Course Management**: list / create / update
+- **Enrollment Management**
+  - quản lý ghi danh theo **user**
+  - quản lý ghi danh theo **course**
+- Route guards:
+  - `ProtectedRoute`: chặn trang cần login
+  - `AdminRoute`: chặn trang admin (role GV)
+
+## Run locally
+
+### Requirements
+
+- Node.js 18+ (khuyến nghị)
+- npm
+
+### Install & start
+
+```bash
+git clone https://github.com/trinhxuangiang16/developer-program-elearning-center.git
+cd developer-program-elearning-center
+npm install
+npm run dev
+```
+
+## Notes
+
+- Project là bài làm nhóm; mình phụ trách chính phần **Admin module**.
+- API backend không public nên repo này tập trung showcase UI/logic FE, quản lý state, route guard, form validation và luồng CRUD admin.
