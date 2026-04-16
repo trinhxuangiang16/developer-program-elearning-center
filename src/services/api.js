@@ -2,8 +2,11 @@ import axios from "axios";
 
 const TOKEN_CYBERSOFT = import.meta.env.VITE_TOKEN_CYBERSOFT;
 
+const BASE_URL =
+  import.meta.env.VITE_BASE_URL || "https://movieapi.cyberlearn.vn/api/";
+
 export const api = axios.create({
-  baseURL: `${import.meta.env.VITE_BASE_URL}QuanLyKhoaHoc/`,
+  baseURL: `${BASE_URL}QuanLyKhoaHoc/`,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -28,7 +31,7 @@ api.interceptors.request.use((config) => {
 });
 
 export const apiQLND = axios.create({
-  baseURL: `${import.meta.env.VITE_BASE_URL}QuanLyNguoiDung/`,
+  baseURL: `${BASE_URL}QuanLyNguoiDung/`,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
